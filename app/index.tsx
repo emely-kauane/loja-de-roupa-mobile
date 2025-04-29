@@ -1,15 +1,36 @@
-import { Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
+const usuarios = [
+  {
+    id: 1,
+    nome: "milly",
+    cargo: "aluno"
+  },
+  {
+    id: 2,
+    nome: "bruna",
+    cargo: "aluno"
+  }
+];
 export default function Index() {
   return (
     <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      style={style.container}
     >
-      <Text>Bem vindo ao nosso site!</Text>
+      {
+        usuarios.map(item => (
+          <Text>{item.nome}</Text>
+        ))
+      }
     </View>
   );
 }
+
+const style = StyleSheet.create({
+
+  container: {
+    flex: 1,
+    
+  }
+
+})
